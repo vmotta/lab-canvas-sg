@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solução — Canvas e SVG</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Solução completa: Canvas e SVG</h1>
+        <p>Compare esta implementação com o código produzido na atividade.</p>
+        <a href="../index.html">Voltar ao laboratório</a>
+    </header>
+
+    <main>
+        <section>
+            <h2>Canvas — gráfico baseado em pixels</h2>
+            <canvas id="tela" width="600" height="400">
+                Seu navegador não suporta o elemento Canvas.
+            </canvas>
+        </section>
+
+        <section>
+            <h2>SVG — objetos vetoriais no DOM</h2>
+            <svg id="logo" viewBox="0 0 600 400" role="img" aria-labelledby="titulo-svg descricao-svg">
+                <title id="titulo-svg">Logotipo do painel tecnológico</title>
+                <desc id="descricao-svg">Cartão azul com conexões e símbolo circular interativo.</desc>
+
+                <defs>
+                    <linearGradient id="fundo-svg" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0%" stop-color="#eff6ff"></stop>
+                        <stop offset="100%" stop-color="#bfdbfe"></stop>
+                    </linearGradient>
+                </defs>
+
+                <rect x="30" y="30" width="540" height="340" rx="28" fill="url(#fundo-svg)" stroke="#1e3a8a" stroke-width="5"></rect>
+
+                <line x1="120" y1="120" x2="270" y2="190" stroke="#64748b" stroke-width="8"></line>
+                <line x1="120" y1="280" x2="270" y2="210" stroke="#64748b" stroke-width="8"></line>
+                <line x1="420" y1="200" x2="520" y2="200" stroke="#64748b" stroke-width="8"></line>
+
+                <circle id="simbolo" cx="340" cy="200" r="82" fill="#2563eb" stroke="#172554" stroke-width="7" tabindex="0"></circle>
+
+                <polygon points="340,145 355,182 395,185 364,210 374,250 340,228 306,250 316,210 285,185 325,182" fill="#ffffff"></polygon>
+
+                <text x="70" y="85" fill="#172554" font-size="34" font-family="Arial" font-weight="bold">Tech Monitor</text>
+                <text x="365" y="330" fill="#334155" font-size="24" font-family="Arial" text-anchor="middle">Clique no símbolo</text>
+            </svg>
+
+            <p id="estado" aria-live="polite">O símbolo está azul.</p>
+        </section>
+    </main>
+
+    <script src="js/canvas.js"></script>
+    <script src="js/svg.js"></script>
+</body>
+</html>
